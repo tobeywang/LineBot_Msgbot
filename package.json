@@ -1,0 +1,17 @@
+{
+  "name": "bot_node",
+  "version": "1.0.0",
+  "description": "Bot_Node",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "author": {
+    "name": "TobeyWang",
+    "email": ""
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "linebot": "^1.4.1"
+  }
+}
