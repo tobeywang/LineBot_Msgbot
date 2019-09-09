@@ -9,16 +9,30 @@ var bot = linebot({
 //bot.on('message', function (event) {
 //    console.log(event); //把收到訊息的 event 印出來看看
 //});
+//取得使用者回覆的訊息
 bot.on('message', function (event) {
-    console.log("MessageLog");
-    event.reply(event.message.text).then(function (data) {
-    // success
-        console.log("My_Successful:"+data); 
-    }).catch(function (error) {
-    // error
-        console.log("My_error:"+error); 
-    });
+    if (event.message.type = 'text') {
+        var msg = event.message.text;
+        //重覆使用者說的訊息
+        event.reply("您說："+msg).then(function (data) {
+            // success
+            console.log(event);
+        }).catch(function (error) {
+            // error
+            console.log('error:'+error);
+        });
+    }
 });
+
+// 主動發送訊息
+setTimeout(function () {
+    var userId = 'Your User ID';
+    var sendMsg = "push hands up ";
+    bot.push(userId, [sendMsg]);
+    console.log('userId: ' + userId);
+    console.log('send: ' + sendMsg);
+}, 3000);
+
 
 const app = express();
 const linebotParser = bot.parser();
