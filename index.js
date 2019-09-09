@@ -16,8 +16,7 @@ bot.on('message', function (event) {
         //重覆使用者說的訊息
         var replyMsg = `您是說:${event.message.text}`;
         var token=event.reply.token;
-        //event.reply(replyMsg)
-        event.replyMsg(token,token+":"+replyMsg).then(function (data) {
+        event.reply(replyMsg+"token:"+token).then(function (data) {
             // success
             console.log(event);
         }).catch(function (error) {
