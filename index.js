@@ -28,7 +28,7 @@ bot.on('message', function (event) {
 
 // 主動發送訊息
 setTimeout(function () {
-    var userId = 'U7eb1fbc43939ee0e9a81f7d1b337bff8';
+    var userId = 'User_ID';//U7eb1fbc43939ee0e9a81f7d1b337bff8
     var sendMsg = "主動推播訊息";
     bot.push(userId, [sendMsg]);
     console.log('userId: ' + userId);
